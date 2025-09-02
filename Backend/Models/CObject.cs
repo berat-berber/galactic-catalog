@@ -22,5 +22,5 @@ public class CObject
     public DateTime DiscoveredAt { get; set; }
 
     [Column("image_url")]
-    public string ImageUrl { get; set; } = null!;
+    public string? ImageUrl { get; set; }
 }

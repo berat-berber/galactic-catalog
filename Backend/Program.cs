@@ -17,9 +17,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Repositories
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<ICelestialObjectsRepository, CelestialObjectsRepository>();
 
 // Services
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<ICelestialObjectsService, CelestialObjectsService>();
 
 var app = builder.Build();
 
