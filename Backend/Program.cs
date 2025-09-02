@@ -1,6 +1,7 @@
 using Scalar.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
+using Backend;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,12 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("database")));
+
+// Repositories
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+
+// Services
+builder.Services.AddScoped<IUsersService, UsersService>();
 
 var app = builder.Build();
 
