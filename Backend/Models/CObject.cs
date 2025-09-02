@@ -10,17 +10,17 @@ public class CObject
     public int Id { get; set; }
 
     [Column("type")]
-    public string Type { get; set; }
+    public string Type { get; set; } = null!;
 
     [Column("name")]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     [Column("description")]
-    public string Description { get; set; }
+    public string Description { get; set; } = null!;
 
     [Column("discovered_at")]
     public DateTime DiscoveredAt { get; set; }
 
     [Column("image_url")]
-    public string ImageUrl { get; set; }
+    public string ImageUrl { get; set; } = null!;
 }
