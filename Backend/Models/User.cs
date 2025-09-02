@@ -1,5 +1,6 @@
 ﻿namespace Backend;
 
+
 [Table("users")]
 public class User
 {
