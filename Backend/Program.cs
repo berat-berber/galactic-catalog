@@ -1,4 +1,5 @@
 using Scalar.AspNetCore;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);

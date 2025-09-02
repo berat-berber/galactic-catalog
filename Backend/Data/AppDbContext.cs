@@ -1,4 +1,5 @@
 ﻿namespace Backend;
+using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext
 {
