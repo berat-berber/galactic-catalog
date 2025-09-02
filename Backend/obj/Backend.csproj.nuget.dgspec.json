@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/berat/Desktop/Backend/Backend.csproj": {}
+    "/home/berat/Desktop/galactic-catalog/Backend/Backend.csproj": {}
   },
   "projects": {
-    "/home/berat/Desktop/Backend/Backend.csproj": {
+    "/home/berat/Desktop/galactic-catalog/Backend/Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/berat/Desktop/Backend/Backend.csproj",
+        "projectUniqueName": "/home/berat/Desktop/galactic-catalog/Backend/Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "/home/berat/Desktop/Backend/Backend.csproj",
+        "projectPath": "/home/berat/Desktop/galactic-catalog/Backend/Backend.csproj",
         "packagesPath": "/home/berat/.nuget/packages/",
-        "outputPath": "/home/berat/Desktop/Backend/obj/",
+        "outputPath": "/home/berat/Desktop/galactic-catalog/Backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/berat/.nuget/NuGet/NuGet.Config"
@@ -48,6 +48,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.8, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.7.2, )"
             }
           },
           "imports": [
