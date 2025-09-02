@@ -1,8 +1,12 @@
 ﻿namespace Backend;
+using System.ComponentModel.DataAnnotations;
 
 public record class UserDTO
 {
-    public string Username { get; set; }
-    public string Email { get; set; }
-    public string RawPassword { get; set; }
+    [Required]
+    public string Username { get; set; } = null!;
+    [Required]
+    public string Email { get; set; } = null!;
+    [Required]
+    public string RawPassword { get; set; } = null!;
 }
