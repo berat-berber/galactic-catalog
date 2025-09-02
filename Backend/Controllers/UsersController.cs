@@ -57,7 +57,7 @@ namespace MyApp.Namespace
 
             if (result == false) return BadRequest("User Not Found");
 
-            return Ok();
+            return Ok("User Deleted");
         }
     }
 }
