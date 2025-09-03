@@ -46,14 +46,5 @@ namespace MyApp.Namespace
             return Ok();
         }
 
-        [HttpPost("image")]
-        public async Task<ActionResult> UploadImage(IFormFile image)
-        {
-
-            var path = await _celestialObjectsService.UploadImageAsync(image);
-
-            return Ok(path);
-        }
-
     }
 }
