@@ -491,3 +491,5 @@ Backend/appsettings.Development.json
 Backend/bin
 Backend/obj
 Backend/obj/Debug
+
+Backend/wwwroot/images/.gitkeep
