@@ -9,4 +9,7 @@ public record class UserDTO
     public string Email { get; set; } = null!;
     [Required]
     public string RawPassword { get; set; } = null!;
+
+    [Required]
+    public string Role { get; set; } = null!;
 }

@@ -15,7 +15,7 @@ public class UsersService : IUsersService
         user.Username = userDTO.Username;
         user.Email = userDTO.Email;
         user.HashedPassword = new PasswordHasher<User>().HashPassword(user, userDTO.RawPassword);
-        user.Role = "admin";
+        user.Role = userDTO.Role;
 
         return await _usersRepository.CreateUserAsync(user);
     }
