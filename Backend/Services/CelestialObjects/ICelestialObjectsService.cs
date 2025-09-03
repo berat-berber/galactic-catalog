@@ -9,4 +9,6 @@ public interface ICelestialObjectsService
     Task<CObject?> UpdateObjectAsync(int id, CObjectDTO cObjectDTO);
 
     Task DeleteObjectAsync(int id);
+
+    Task<string> UploadImageAsync(IFormFile image);
 }

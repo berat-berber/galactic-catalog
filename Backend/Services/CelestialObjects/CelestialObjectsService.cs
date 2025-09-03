@@ -9,12 +9,16 @@ public class CelestialObjectsService : ICelestialObjectsService
 
     public async Task<CObject> CreateObjectAsync(CObjectDTO cObjectDTO)
     {
+
+        var imagePath = await UploadImageAsync(cObjectDTO.Image);
+
         var cObject = new CObject()
         {
             Type = cObjectDTO.Type,
             Name = cObjectDTO.Name,
             Description = cObjectDTO.Description,
-            DiscoveredAt = cObjectDTO.DiscoveredAt
+            DiscoveredAt = cObjectDTO.DiscoveredAt,
+            ImageUrl = imagePath
         };
 
         return await _celestialObjectsRepository.CreateObjectAsync(cObject);
@@ -46,6 +50,18 @@ public class CelestialObjectsService : ICelestialObjectsService
         if (cObject is null) return;
 
         await _celestialObjectsRepository.DeleteObjectAsync(cObject);
+    }
+
+    public async Task<string> UploadImageAsync(IFormFile image)
+    {
+        var filePath = Path.Combine("wwwroot/images", image.FileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await image.CopyToAsync(stream);
+        }
+
+        return filePath;
     }
 
 }

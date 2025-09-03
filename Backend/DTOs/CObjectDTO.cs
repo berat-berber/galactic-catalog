@@ -11,6 +11,8 @@ public record class CObjectDTO
     public string Description { get; set; } = null!;
     [Required]
     public DateTime DiscoveredAt { get; set; }
+
+    [Required]
+    public IFormFile Image { get; set; } = null!;
     
-    public string? ImageUrl { get; set; }
 }

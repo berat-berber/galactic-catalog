@@ -14,8 +14,9 @@ namespace MyApp.Namespace
         public CelestialObjectsController(ICelestialObjectsService celestialObjectsService) => _celestialObjectsService = celestialObjectsService;
 
         [HttpPost]
-        public async Task<ActionResult> CreateObject([FromBody] CObjectDTO cObjectDTO)
+        public async Task<ActionResult> CreateObject([FromForm] CObjectDTO cObjectDTO)
         {
+
             var cObject = await _celestialObjectsService.CreateObjectAsync(cObjectDTO);
 
             return Ok(cObject);
@@ -43,6 +44,15 @@ namespace MyApp.Namespace
             await _celestialObjectsService.DeleteObjectAsync(id);
 
             return Ok();
+        }
+
+        [HttpPost("image")]
+        public async Task<ActionResult> UploadImage(IFormFile image)
+        {
+
+            var path = await _celestialObjectsService.UploadImageAsync(image);
+
+            return Ok(path);
         }
 
     }

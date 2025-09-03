@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "+8gz7rjoDcLSTM7Kwf5qkbapKXDd97xhyAb9pxhYrew=",
+  "Hash": "wCeWwEXqIq3Y3tDvarDmmTsGjwiw9w3hRJALj2QRLyA=",
   "Source": "Backend",
   "BasePath": "_content/Backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Backend/wwwroot",
+      "Source": "Backend",
+      "ContentRoot": "/home/berat/Desktop/galactic-catalog/Backend/wwwroot/",
+      "BasePath": "_content/Backend",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }
