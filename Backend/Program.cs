@@ -2,6 +2,7 @@ using Scalar.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend;
+using DotNetEnv;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +13,12 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+Env.Load();
+
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("database")));
+    options.UseNpgsql(connectionString));
 
 // Repositories
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
