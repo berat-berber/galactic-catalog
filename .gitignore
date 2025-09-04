@@ -486,8 +486,6 @@ $RECYCLE.BIN/
 Backend/wwwroot/images/*
 !Backend/wwwroot/images/.gitkeep
 
-Backend/appsettings.Development.json
-
 Backend/bin
 Backend/obj
 Backend/obj/Debug
