@@ -1,4 +1,5 @@
 using Backend;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,7 @@ namespace MyApp.Namespace
 
         public CelestialObjectsController(ICelestialObjectsService celestialObjectsService) => _celestialObjectsService = celestialObjectsService;
 
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<ActionResult> CreateObject([FromForm] CObjectDTO cObjectDTO)
         {
@@ -22,6 +24,7 @@ namespace MyApp.Namespace
             return Ok(cObject);
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult> GetAllObjects()
         {
@@ -30,6 +33,7 @@ namespace MyApp.Namespace
             return Ok(objects);
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateObject(int id, [FromBody] CObjectDTO cObjectDTO)
         {
@@ -38,6 +42,7 @@ namespace MyApp.Namespace
             return Ok(cObject);
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteObject(int id)
         {

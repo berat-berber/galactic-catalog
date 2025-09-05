@@ -45,4 +45,11 @@ public class UsersRepository : IUsersRepository
 
         return;
     }
+
+    public async Task<User?> GetUserByEmailAsync(string email)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+        return user;
+    }
 }

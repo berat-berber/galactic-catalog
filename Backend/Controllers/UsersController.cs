@@ -1,4 +1,5 @@
 using Backend;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace MyApp.Namespace
 
         public UsersController(IUsersService usersService) => _usersService = usersService;
 
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<ActionResult> CreateUser([FromBody] UserDTO userDTO)
         {
@@ -20,6 +22,7 @@ namespace MyApp.Namespace
 
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public async Task<ActionResult> GetAllUsers()
         {
@@ -28,6 +31,7 @@ namespace MyApp.Namespace
             return Ok(users);
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUserById(Guid id)
         {
@@ -38,6 +42,7 @@ namespace MyApp.Namespace
             return Ok(user);
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateUser(Guid id, [FromBody] UserDTO userDTO)
         {
@@ -49,7 +54,8 @@ namespace MyApp.Namespace
 
 
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(Guid id)
         {
