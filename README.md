@@ -38,7 +38,8 @@ The vision is to expand into a full-fledged, interactive space learning platform
   - [ ] AI-powered summary of changes in emails  
 
 - **Developer Experience**
-  - [ ] Logging improvements  
+  - [ ] Logging improvements
+  - [ ] Caching (Redis)  
   - [ ] `install.sh` setup script  
   - [ ] Containerization (Docker/Kubernetes)  
 
