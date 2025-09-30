@@ -30,7 +30,7 @@ The vision is to expand into a full-fledged, interactive space learning platform
 
 - **User Engagement**
   - [ ] Favorite objects  
-  - [ ] Real-time chat room (SignalR / WebSockets)  
+  - [ ] Real-time chat room with SignalR  
 
 - **Automation & Scheduling**
   - [ ] Task scheduling  
